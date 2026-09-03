@@ -3,6 +3,8 @@ title: Inventory API
 sidebar_position: 1
 ---
 
+# Inventory API
+
 ## Overview
 
 Inventory API is a REST API used by an internal inventory application to retrieve, create, and view item data.
@@ -10,7 +12,7 @@ Inventory API is a REST API used by an internal inventory application to retriev
 ## Base Information
 
 | Field        | Value                    |
-|--------------|--------------------------|
+| ------------ | ------------------------ |
 | Base URL     | `http://localhost:3000/api` |
 | Content Type | `application/json`       |
 | Authentication | Bearer Token           |
@@ -27,15 +29,15 @@ Content-Type: application/json
 
 ## Endpoints
 
-| Method | Path           | Description                          |
-|--------|----------------|--------------------------------------|
-| GET    | `/items`       | Retrieve the list of inventory items. |
-| POST   | `/items`       | Create a new inventory item.         |
-| GET    | `/items/{id}`  | Retrieve a specific inventory item by ID. |
+| Method | Path            | Description                         |
+| ------ | --------------- | ----------------------------------- |
+| GET    | `/items`        | Retrieve the list of inventory items. |
+| POST   | `/items`        | Create a new inventory item.        |
+| GET    | `/items/{id}`   | Retrieve a specific inventory item by ID. |
 
 ## Endpoint Details
 
-### GET `/items`
+### GET /items
 
 Returns all inventory items. The API returns HTTP 200 when the request is successful.
 
@@ -46,7 +48,7 @@ GET /api/items HTTP/1.1
 Authorization: Bearer YOUR_TOKEN
 ```
 
-**Response:**
+**Response (200 OK):**
 
 ```json
 [
@@ -59,9 +61,7 @@ Authorization: Bearer YOUR_TOKEN
 ]
 ```
 
----
-
-### POST `/items`
+### POST /items
 
 Creates a new inventory item. The API expects a JSON body with `name`, `quantity`, and `location`. The API returns HTTP 201 when the item is created.
 
@@ -75,7 +75,7 @@ Creates a new inventory item. The API expects a JSON body with `name`, `quantity
 }
 ```
 
-**Response:**
+**Response (201 Created):**
 
 ```json
 {
@@ -85,8 +85,6 @@ Creates a new inventory item. The API expects a JSON body with `name`, `quantity
   "location": "B-02"
 }
 ```
-
----
 
 ### GET `/items/{id}`
 
@@ -99,7 +97,7 @@ GET /api/items/101 HTTP/1.1
 Authorization: Bearer YOUR_TOKEN
 ```
 
-**Response:**
+**Response (200 OK):**
 
 ```json
 {
