@@ -9,12 +9,12 @@ Inventory API is a REST API used by an internal inventory application to retriev
 
 ## Base Information
 
-| Field | Value |
-| --- | --- |
-| Base URL | `http://localhost:3000/api` |
-| Content Type | `application/json` |
-| Authentication | Bearer Token |
-| API Version | `v1` |
+| Field       | Value                      |
+|-------------|----------------------------|
+| Base URL    | `http://localhost:3000/api`|
+| Content Type| `application/json`         |
+| Authentication| Bearer Token            |
+| API Version | v1                         |
 
 ## Authentication
 
@@ -27,11 +27,11 @@ Content-Type: application/json
 
 ## Endpoints
 
-| Method | Path | Description |
-| --- | --- | --- |
-| GET | `/items` | Retrieve the list of inventory items. |
-| POST | `/items` | Create a new inventory item. |
-| GET | `/items/{id}` | Retrieve a specific inventory item by ID. |
+| Method | Path           | Description                        |
+|--------|----------------|------------------------------------|
+| GET    | `/items`       | Retrieve the list of inventory items. |
+| POST   | `/items`       | Create a new inventory item.       |
+| GET    | `/items/{id}` | Retrieve a specific inventory item by ID. |
 
 ## Endpoint Details
 
@@ -108,3 +108,4 @@ Authorization: Bearer YOUR_TOKEN
   "quantity": 24,
   "location": "A-01"
 }
+```
