@@ -1,7 +1,7 @@
+```yml
 ---
-
 title: Inventory API
-sidebar: 
+sidebar_position: 1
 ---
 
 # Inventory API
@@ -95,4 +95,5 @@ Authorization: Bearer YOUR_TOKEN
   "quantity": 24,
   "location": "A-01"
 }
+```
 ```
