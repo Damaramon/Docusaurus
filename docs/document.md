@@ -1,119 +1,53 @@
 ---
-title: adammmmm
+title: "adam"
 sidebar_position: 1
 ---
 
-## Overview
+# adam — Dokumentasi Model AI
 
-Inventory API is a REST API used by an internal inventory application to retrieve, create, and view item data.
+Dokumentasi ini mencakup informasi terkait **teAI** dan berbagai model AI yang tersedia dalam ekosistem tersebut.
 
-## Base Information
+## Daftar Model AI
 
-| Field       | Value                    |
-|-------------|--------------------------|
-| Base URL    | `http://localhost:3000/api` |
-| Content Type | `application/json`       |
-| Authentication | Bearer Token          |
-| API Version | v1                       |
+### 1. Claude
 
-## Authentication
+Claude adalah model AI yang dikembangkan oleh **Anthropic**. Claude dirancang dengan fokus pada keamanan, kebaikan hati, dan kemampuan penalaran yang kuat. Model ini tersedia dalam beberapa variant, termasuk:
 
-All endpoints require a Bearer Token in the HTTP Authorization header.
+| Variant | Deskripsi |
+|---------|-----------|
+| Claude 3 Opus | Model paling capable untuk tugas kompleks |
+| Claude 3 Sonnet | Model balanced untuk berbagai tugas |
+| Claude 3 Haiku | Model cepat dan efisien untuk tugas ringan |
 
-```http
-Authorization: Bearer YOUR_TOKEN
-Content-Type: application/json
-```
+### 2. OpenAI Models
 
-## Endpoints
+OpenAI menyediakan berbagai model AI melalui platform mereka. Model-model tersebut meliputi:
 
-| Method | Path         | Description                     |
-|--------|--------------|---------------------------------|
-| GET    | `/items`     | Retrieve the list of inventory items. |
-| POST   | `/items`     | Create a new inventory item.    |
-| GET    | `/items/{id}` | Retrieve a specific inventory item by ID. |
+- **GPT-4** — Model bahasa besar generatif dengan kemampuan penalaran lanjutan
+- **GPT-3.5 Turbo** — Model yang dioptimalkan untuk kecepatan dan efisiensi
+- **GPT-4 Turbo** — Versi lebih cepat dari GPT-4 dengan context window lebih besar
+- **GPT-4o** — Model multimodal yang mendukung teks, gambar, dan audio
+- **Embedding Models** — Model untuk menghasilkan representasi vektor teks
+- **Moderation Models** — Model untuk mendeteksi konten yang tidak pantas
 
-## Get All Items
+### 3. Model Lainnya
 
-**`GET /items`**
+Dalam ekosistem teAI, model AI tambahan yang tersedia meliputi:
 
-Returns all inventory items.
+| Kategori | Model |
+|----------|-------|
+| **Multimodal** | Gemini, LLaVA |
+| **Coding** | Codex, StarCoder |
+| **Embedding** | text-embedding-ada, text-embedding-3 |
+| **Speech-to-Text** | Whisper |
+| **Text-to-Speech** | TTS |
 
-**Response**
+## Ringkasan
 
-- **200 OK** — Request successful.
+> **Note:** Dokumentasi ini bersifat umum. Untuk detail teknis spesifik, referensi API, dan endpoint yang valid, silakan merujuk ke dokumentasi resmi masing-masing penyedia model AI.
 
-```http
-GET /api/items HTTP/1.1
-Authorization: Bearer YOUR_TOKEN
-```
+## Sumber Daya Tambahan
 
-```json
-[
-  {
-    "id": 101,
-    "name": "Wireless Mouse",
-    "quantity": 24,
-    "location": "A-01"
-  }
-]
-```
-
-## Create Item
-
-**`POST /items`**
-
-Creates a new inventory item. Requires a JSON body with `name`, `quantity`, and `location`.
-
-**Request Body**
-
-```json
-{
-  "name": "Mechanical Keyboard",
-  "quantity": 10,
-  "location": "B-02"
-}
-```
-
-**Response**
-
-- **201 Created** — Item created successfully.
-
-```json
-{
-  "id": 102,
-  "name": "Mechanical Keyboard",
-  "quantity": 10,
-  "location": "B-02"
-}
-```
-
-## Get Item by ID
-
-**`GET /items/{id}`**
-
-Returns one inventory item by ID.
-
-**Parameters**
-
-| Name | Type   | Description         |
-|------|--------|---------------------|
-| `id` | number | The ID of the item. |
-
-**Response**
-
-- **200 OK** — Request successful.
-
-```http
-GET /api/items/101 HTTP/1.1
-Authorization: Bearer YOUR_TOKEN
-```
-
-```json
-{
-  "id": 101,
-  "name": "Wireless Mouse",
-  "quantity": 24,
-  "location": "A-01"
-}
-```
+- [Claude Documentation](https://docs.anthropic.com)
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [Google Gemini API](https://ai.google.dev/docs)
