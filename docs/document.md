@@ -1,4 +1,119 @@
----\ntitle: Generate Project Baru\nsidebar_position: 1\n---\n\n# Generate Project Baru\n\nDokumentasi ini tersedia dalam Bahasa Indonesia.\n\n:::note\nSumber dokumen yang diberikan tidak mengandung detail spesifik mengenai langkah-langkah atau perintah yang digunakan untuk menghasilkan project baru.\n:::\n\nJika Anda memerlukan panduan lebih lanjut, silakan lihat dokumentasi terkait atau berikan sumber dokumen yang lebih lengkap."
+---
+title: adammmmm
+sidebar_position: 1
+---
+
+## Overview
+
+Inventory API is a REST API used by an internal inventory application to retrieve, create, and view item data.
+
+## Base Information
+
+| Field       | Value                    |
+|-------------|--------------------------|
+| Base URL    | `http://localhost:3000/api` |
+| Content Type | `application/json`       |
+| Authentication | Bearer Token          |
+| API Version | v1                       |
+
+## Authentication
+
+All endpoints require a Bearer Token in the HTTP Authorization header.
+
+```http
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+```
+
+## Endpoints
+
+| Method | Path         | Description                     |
+|--------|--------------|---------------------------------|
+| GET    | `/items`     | Retrieve the list of inventory items. |
+| POST   | `/items`     | Create a new inventory item.    |
+| GET    | `/items/{id}` | Retrieve a specific inventory item by ID. |
+
+## Get All Items
+
+**`GET /items`**
+
+Returns all inventory items.
+
+**Response**
+
+- **200 OK** — Request successful.
+
+```http
+GET /api/items HTTP/1.1
+Authorization: Bearer YOUR_TOKEN
+```
+
+```json
+[
+  {
+    "id": 101,
+    "name": "Wireless Mouse",
+    "quantity": 24,
+    "location": "A-01"
+  }
+]
+```
+
+## Create Item
+
+**`POST /items`**
+
+Creates a new inventory item. Requires a JSON body with `name`, `quantity`, and `location`.
+
+**Request Body**
+
+```json
+{
+  "name": "Mechanical Keyboard",
+  "quantity": 10,
+  "location": "B-02"
 }
 ```
+
+**Response**
+
+- **201 Created** — Item created successfully.
+
+```json
+{
+  "id": 102,
+  "name": "Mechanical Keyboard",
+  "quantity": 10,
+  "location": "B-02"
+}
+```
+
+## Get Item by ID
+
+**`GET /items/{id}`**
+
+Returns one inventory item by ID.
+
+**Parameters**
+
+| Name | Type   | Description         |
+|------|--------|---------------------|
+| `id` | number | The ID of the item. |
+
+**Response**
+
+- **200 OK** — Request successful.
+
+```http
+GET /api/items/101 HTTP/1.1
+Authorization: Bearer YOUR_TOKEN
+```
+
+```json
+{
+  "id": 101,
+  "name": "Wireless Mouse",
+  "quantity": 24,
+  "location": "A-01"
+}
 ```
