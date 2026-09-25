@@ -27,7 +27,7 @@ Kalkulator berbasis terminal ini menerima dua angka dan satu operator, lalu mena
 Contoh alur penggunaan:
 
 ```text
-Angka 1: 10
+Angka 1: 11
 Operator (+, -, *, /): *
 Angka 2: 4
 Hasil: 40.0
